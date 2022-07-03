@@ -6,6 +6,7 @@ from config import LOGS_FOLDER
 from main.main import main_blueprint, posts_blueprint
 from search.search import search_blueprint
 from user_feed.user_feed import user_feed_blueprint
+from api.api import api_blueprint
 
 if not path.exists(LOGS_FOLDER):
     mkdir(LOGS_FOLDER)
@@ -16,6 +17,7 @@ app.register_blueprint(main_blueprint)
 app.register_blueprint(posts_blueprint)
 app.register_blueprint(search_blueprint)
 app.register_blueprint(user_feed_blueprint)
+app.register_blueprint(api_blueprint)
 
 
 @app.errorhandler(404)
