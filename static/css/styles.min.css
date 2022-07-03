@@ -276,6 +276,19 @@ textarea {
 	vertical-align: middle
 }
 
+.header__glass-btn {
+	position: absolute;
+	left: 0;
+	top: 34px;
+	text-decoration: none;
+	display: block
+}
+
+.header__glass-icon {
+	display: inline-block;
+	vertical-align: middle
+}
+
 .item {
 	margin-bottom: 22px;
 	padding-bottom: 23px;
@@ -339,7 +352,14 @@ textarea {
 }
 
 .item__descr {
-	margin-bottom: 2px
+	margin-bottom: 2px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+item__descr__full {
+	margin-bottom: 2px;
 }
 
 .item__text {
