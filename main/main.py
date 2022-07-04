@@ -5,7 +5,6 @@ from bookmarks_dao import BookmarksDAO
 
 POSTS = PostsDAO()
 BOOKMARKS = BookmarksDAO()
-BOOKMARKS_COUNT = len(BOOKMARKS.get_all_bookmarks())
 main_blueprint = Blueprint('main_blueprint', __name__, template_folder='../templates')
 posts_blueprint = Blueprint('posts_blueprint', __name__, template_folder='../templates')
 
@@ -16,7 +15,8 @@ def main():
     :return: index.html
     """
     posts = POSTS.get_posts_all()
-    bookmarks_count = BOOKMARKS_COUNT
+    bookmarks =BOOKMARKS.get_all_bookmarks()
+    bookmarks_count = len(bookmarks)
     return render_template('index.html', posts=posts, bookmarks_count=bookmarks_count)
 
 
