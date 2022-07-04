@@ -278,7 +278,7 @@ textarea {
 
 .header__glass-btn {
 	position: absolute;
-	left: 0;
+	right: 50px;
 	top: 34px;
 	text-decoration: none;
 	display: block

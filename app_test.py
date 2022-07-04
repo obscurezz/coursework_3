@@ -24,4 +24,3 @@ def test_exact_post():
         assert response.status_code == 200, 'api is not reachable'
         assert isinstance(response.json, dict), 'Result is not dict'
         assert list(response.json.keys()) == sorted(keys), 'Result keys are not valid'
-

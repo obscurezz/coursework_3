@@ -1,8 +1,8 @@
 from flask import Blueprint, render_template
 
-from utils import DataLoader
+from posts_dao import PostsDAO
 
-POSTS = DataLoader('data/data.json')
+POSTS = PostsDAO()
 
 user_feed_blueprint = Blueprint('user_feed_blueprint', __name__, template_folder='../templates')
 

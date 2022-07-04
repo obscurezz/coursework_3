@@ -1,29 +1,20 @@
 import json
 
-from config import DATA_FOLDER, COMMENTS
+from config import DATA, DATA_FOLDER, COMMENTS
 
 
-class DataLoader:
+class PostsDAO:
     """
     Realizes methods to manipulate with json data from file
     """
-
-    def __init__(self, jsonfile):
-        self.__jsonfile = jsonfile
-
-    def is_json(self):
-        """
-        :return: True if file extension is json
-        """
-        return self.__jsonfile.split('.')[1] == 'json'
-
-    def get_posts_all(self) -> list[dict] | Exception:
+    @staticmethod
+    def get_posts_all() -> list[dict] | Exception:
         """
         :return: loaded data from json file
         """
-        if self.is_json():
+        if str(DATA).endswith('.json'):
             try:
-                with open(self.__jsonfile, 'r', encoding='utf-8') as file:
+                with open(DATA, 'r', encoding='utf-8') as file:
                     loaded_json = json.load(file)
                     return loaded_json
             except (FileExistsError, FileNotFoundError):
@@ -45,13 +36,6 @@ class DataLoader:
 
         return user_posts
 
-    @staticmethod
-    def get_comments_by_post_id(post_id: int) -> list[tuple]:
-        with open(COMMENTS, 'r', encoding='utf-8') as file:
-            comments = [(block['commenter_name'], block['comment']) for block in json.load(file) if
-                        block['post_id'] == post_id]
-        return comments
-
     def get_post_by_pk(self, pk: int) -> dict:
         """
         :param pk: pk value of dict in json file
@@ -60,3 +44,10 @@ class DataLoader:
         for post in self.get_posts_all():
             if pk == post['pk']:
                 return post
+
+    @staticmethod
+    def get_comments_by_post_id(post_id: int) -> list[tuple]:
+        with open(COMMENTS, 'r', encoding='utf-8') as file:
+            comments = [(block['commenter_name'], block['comment']) for block in json.load(file) if
+                        block['post_id'] == post_id]
+        return comments

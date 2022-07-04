@@ -1,10 +1,9 @@
-from logging_config import get_logger
-
 from flask import Blueprint, jsonify
 
-from utils import DataLoader
+from logging_config import get_logger
+from posts_dao import PostsDAO
 
-POSTS = DataLoader('data/data.json')
+POSTS = PostsDAO()
 logger = get_logger(__name__, 'logs/api.log')
 
 api_blueprint = Blueprint('api_blueprint', __name__)

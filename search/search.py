@@ -1,8 +1,8 @@
 from flask import Blueprint, render_template, request
 
-from utils import DataLoader
+from posts_dao import PostsDAO
 
-POSTS = DataLoader('data/data.json')
+POSTS = PostsDAO()
 
 search_blueprint = Blueprint('search_blueprint', __name__, template_folder='../templates')
 
