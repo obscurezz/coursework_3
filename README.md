@@ -11,6 +11,15 @@ blueprint for search
 # user_feed.py
 blueprint for user_feed
 
+# tags.py
+blueprint for working with tags
+
+# user_feed.py
+blueprint for posts of exact user
+
+# bookmarks
+blueprint for working with view, add and delete bookmarks
+
 # config.py
 some paths configurations
 
