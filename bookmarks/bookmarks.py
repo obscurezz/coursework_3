@@ -9,7 +9,7 @@ BOOKMARKS = BookmarksDAO()
 bookmarks_blueprint = Blueprint('bookmarks_blueprint', __name__, template_folder='../templates')
 
 
-@bookmarks_blueprint.route('/bookmarks', methods=['GET', 'POST'])
+@bookmarks_blueprint.route('/bookmarks', methods=['GET'])
 def all_bookmarks():
     """
     :return: bookmarks.html

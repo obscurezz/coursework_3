@@ -36,8 +36,10 @@
             </div>
             <span class="item__username">{{ post.poster_name }}</span>
           </a>
-          <button type="button" class="item__bookmark-btn">
-            <img src="../static/img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
+          <button type="button" formmethod="post" class="item__bookmark-btn">
+            <a href="/bookmarks/add/{{ post.pk }}">
+              <img src="../static/img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
+            </a>
           </button>
         </div>
         <a href="" class="item__post-link">
