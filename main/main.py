@@ -15,7 +15,7 @@ def main():
     :return: index.html
     """
     posts = POSTS.get_posts_all()
-    bookmarks =BOOKMARKS.get_all_bookmarks()
+    bookmarks = BOOKMARKS.get_all_bookmarks()
     bookmarks_count = len(bookmarks)
     return render_template('index.html', posts=posts, bookmarks_count=bookmarks_count)
 

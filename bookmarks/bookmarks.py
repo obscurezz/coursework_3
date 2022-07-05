@@ -9,7 +9,7 @@ BOOKMARKS = BookmarksDAO()
 bookmarks_blueprint = Blueprint('bookmarks_blueprint', __name__, template_folder='../templates')
 
 
-@bookmarks_blueprint.route('/bookmarks')
+@bookmarks_blueprint.route('/bookmarks', methods=['GET', 'POST'])
 def all_bookmarks():
     """
     :return: bookmarks.html
@@ -29,7 +29,7 @@ def add_bookmark(post_id: int):
     return redirect("/", code=302)
 
 
-@bookmarks_blueprint.route('/bookmarks/remove/<int:post_id>', methods=['GET', 'DELETE'])
+@bookmarks_blueprint.route('/bookmarks/remove/<int:post_id>', methods=['GET', 'POST'])
 def delete_bookmark(post_id: int):
     """
     :param post_id: pk of post which be deleted from the bookmarks
