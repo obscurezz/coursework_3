@@ -18,7 +18,7 @@ def all_bookmarks():
     return render_template('bookmarks.html', posts=bookmarks)
 
 
-@bookmarks_blueprint.route('/bookmarks/add/<int:post_id>', methods=['GET', 'POST'])
+@bookmarks_blueprint.route('/bookmarks/add/<int:post_id>', methods=['POST'])
 def add_bookmark(post_id: int):
     """
     :param post_id: pk of post which be added to the bookmarks
