@@ -29,7 +29,7 @@ def add_bookmark(post_id: int):
     return redirect("/", code=302)
 
 
-@bookmarks_blueprint.route('/bookmarks/remove/<int:post_id>', methods=['GET', 'POST'])
+@bookmarks_blueprint.route('/bookmarks/remove/<int:post_id>', methods=['POST'])
 def delete_bookmark(post_id: int):
     """
     :param post_id: pk of post which be deleted from the bookmarks

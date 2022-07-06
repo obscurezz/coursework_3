@@ -316,7 +316,7 @@ textarea {
 
 .item__delete {
 	display: inline-block;
-	padding-top: 10px;
+	position: center;
 	font-weight: bold;
 	text-decoration: none;
 	color: #FF2768
